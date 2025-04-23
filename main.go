@@ -5,15 +5,20 @@ import (
     "log"
     "math/rand"
     "net/http"
-    "time"
+	"time"
+	"os"
 )
 
 func main() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
     http.HandleFunc("/", indexHandler)
     http.HandleFunc("/events", sseHandler)
 
-    fmt.Println("Server running on http://localhost:8080")
-    log.Fatal(http.ListenAndServe(":8080", nil))
+    fmt.Println("Server running on http://localhost:"+port)
+    log.Fatal(http.ListenAndServe(":"+port, nil))
 }
 
 func sseHandler(w http.ResponseWriter, r *http.Request) {
