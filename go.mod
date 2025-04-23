@@ -1,6 +1,6 @@
 module github.com/julcode29/go-sse
 
-go 1.23.0
+go 1.24.2
 
 toolchain go1.24.2
 
