@@ -1,6 +1,8 @@
 module github.com/julcode29/go-sse
 
-go 1.21
+go 1.23.0
+
+toolchain go1.24.2
 
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
